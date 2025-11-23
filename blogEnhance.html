@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Background with Professional Comments</title>
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+/* BACKGROUND VIDEO */
+#video-bg { position: fixed; top:0; left:0; width:100%; height:100%; overflow:hidden; z-index:-1; }
+#video-bg iframe { width:100vw; height:100vh; pointer-events:none; }
+
+/* DARK OVERLAY */
+#overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.45); z-index:-1; }
+
+body { font-family: Arial, sans-serif; color: white; }
+
+/* HEADER */
+#top-header{
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    border-bottom: 2px solid #ffd700;
+    position: sticky;
+    top:0;
+    z-index: 10;
+}
+#logo{ width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid white; margin-right: 15px; }
+#header-flex{ display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+#label{ color: #ffd700; font-size: 22px; font-weight: bold; letter-spacing: 1px; text-shadow: 2px 2px 6px rgba(0,0,0,0.8); margin: 10px 0; }
+#contact a{ margin: 0 8px; text-decoration: none; color: black; padding: 6px 15px; border-radius: 20px; background-color: #ffef3b; font-weight: bold; transition: 0.3s ease; }
+#contact a:hover{ background-color: #ff6b3b; transform: scale(1.05); }
+.wrapper{ width:100%; overflow:hidden; margin-top:15px; border-radius:10px; border:2px solid rgba(255,255,255,0.5); backdrop-filter: blur(2px); background-color:black; }
+#slider img{ width:40%; height:auto; filter: brightness(1.4) contrast(1.2); }
+
+/* ENHANCED COMMENTS LEFT SIDE */
+.comments-wrapper{
+    position: fixed;
+    top: 140px;
+    left: 20px;
+    width: 360px;
+    max-height: 75vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+.comment{
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.08);
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+.comment:hover{
+    transform: translateX(8px);
+    background: rgba(255,255,255,0.15);
+}
+.avatar{ width:60px; height:60px; border-radius:50%; overflow:hidden; flex-shrink:0; border:2px solid #ffd700; }
+.avatar img{ width:100%; height:100%; object-fit:cover; }
+.comment-body{ flex:1; display:flex; flex-direction: column; }
+.comment-name{ font-weight:bold; color:#ffd700; font-size:16px; margin-bottom:8px; text-shadow: 1px 1px 5px rgba(0,0,0,0.8); }
+.comment-text{ color:white; font-size:15px; line-height:1.6; }
+/* SCROLLBAR STYLING */
+.comments-wrapper::-webkit-scrollbar { width:8px; }
+.comments-wrapper::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius:10px; }
+.comments-wrapper::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius:10px; }
+</style>
+</head>
+<body>
+
+<!-- YOUTUBE BACKGROUND VIDEO -->
+<div id="video-bg">
+    <iframe src="https://www.youtube.com/embed/16Gcq0FVtAI?autoplay=1&mute=1&controls=0&loop=1&playlist=16Gcq0FVtAI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<!-- DARK OVERLAY -->
+<div id="overlay"></div>
+
+<!-- HEADER -->
+<nav id="top-header">
+    <div id="header-flex">
+        <img id="logo" src="https://th.bing.com/th/id/OIP.N_YhKX5c3USmUMnYca1yagHaHa?w=169&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3">
+        <h1 id="label">POSITIBO TUNGKOL SA OPERASYON NG MRT</h1>
+        <nav id="contact">
+            <a href="blogEnhance.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="Services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+    <div class="wrapper">
+        <marquee id="slider" direction="left" scrollamount="12">
+            <img src="logo1.png" alt="logo1.png">
+            <img src="logo2.png" alt="logo2.png">
+            <img src="logo3.png" alt="logo3.png">
+        </marquee>
+    </div>
+</nav>
+
+<!-- ENHANCED COMMENTS LEFT SIDE -->
+<div class="comments-wrapper">
+    <div class="comment">
+        <div class="avatar"><img src="joerge.jpg" alt="Joerge"></div>
+        <div class="comment-body">
+            <div class="comment-name">Joerge Saguindan</div>
+            <div class="comment-text">Paggamit ng Pampublikong Transportasyon: Ang operasyon ng MRT at LRT ay nagbibigay ng alternatibong mode of transportation sa mga tao sa malalaking kalungsuran tulad ng Metro Manila. Mas mabilis ang pag-access sa trabaho, paaralan, at iba't ibang destinasyon nang hindi kinakailangang gumamit ng pribadong sasakyan. Nakatutulong ito sa pagbawas ng traffic congestion at mapanatili ang kalidad ng hangin.</div>
+        </div>
+    </div>
+    <div class="comment">
+        <div class="avatar"><img src="jerwin.jpg" alt="Jerwin"></div>
+        <div class="comment-body">
+            <div class="comment-name">Jerwin Tamba</div>
+            <div class="comment-text">Epekto sa Ekonomiya: Ang operasyon ng MRT at LRT ay nagbibigay ng mga trabaho sa libo-libong mga tao mula sa mga empleyado ng tren, seguridad, at mga manggagawa sa pagmamantena. Ito rin ay nagpapalakas sa lokal na ekonomiya dahil sa mga negosyo at serbisyong nauugnay sa mga istasyon.</div>
+        </div>
+    </div>
+    <div class="comment">
+        <div class="avatar"><img src="angelo.jpg" alt="Angelo"></div>
+        <div class="comment-body">
+            <div class="comment-name">Angelo T. Yabes</div>
+            <div class="comment-text">Epektibong Pag-angkat: Dahil sa limitasyon ng kalsada, ang MRT at LRT ay epektibong paraan ng transportasyon sa mga kalakhang lungsod. Mas mabilis ito kumpara sa pribadong sasakyan, lalo na sa oras ng rush hour.</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

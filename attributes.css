@@ -1,0 +1,37 @@
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family: Arial, sans-serif; background:black; color:white; }
+#top-header{
+padding: 15px 20px;
+background: rgba(0,0,0,0.7);
+backdrop-filter: blur(5px);
+border-bottom:2px solid #ffd700;
+position: sticky;
+top:0;
+z-index:10;
+}
+#logo{ width:50px; height:50px; object-fit:cover; border-radius:50%; border:2px solid #ffd700; margin-right:15px; }
+#header-flex{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+#label{ color:#ffd700; font-size:22px; font-weight:bold; letter-spacing:1px; text-shadow:2px 2px 6px rgba(0,0,0,0.8); margin:10px 0; }
+#contact a{
+margin:0 8px;
+text-decoration:none;
+color:#ffd700;
+padding:6px 15px;
+border-radius:20px;
+background: rgba(255,255,255,0.1);
+font-weight:bold;
+transition:0.3s ease;
+border:1px solid #ffd700;
+cursor:pointer;
+}
+#contact a:hover{ background-color:#ffd700; color:black; transform:scale(1.05); }
+.section{
+padding:40px 20px;
+margin-top:10px;
+background: rgba(0,0,0,0.6);
+border-radius:15px;
+border:1px solid #ffd700;
+backdrop-filter: blur(5px);
+}
+.section h2{ color:#ffd700; margin-bottom:15px; }
+.section p{ color:white; line-height:1.6; }
